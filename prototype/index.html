@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Birds — Live Feed</title>
+  <link rel="stylesheet" href="classic-p2.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="menubar">
+    <div class="menu-left">
+      <a class="brand" href="#top" aria-label="Birds home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Birds</span>
+      </a>
+      <button class="menu-link is-active" type="button" data-tab="live">Live</button>
+      <button class="menu-link" type="button" data-tab="following">Following</button>
+      <button class="menu-link" type="button" data-tab="topics">Topics</button>
+      <button class="menu-link" type="button" data-tab="search">Search</button>
+    </div>
+    <div class="menu-right">
+      <span class="small-status">24 members · <span id="online-count">3</span> online</span>
+      <span class="clock" id="clock">--:--</span>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <div class="sheet">
+          <button type="button" data-tab="live">Live</button>
+          <button type="button" data-tab="following">Following</button>
+          <button type="button" data-tab="topics">Topics</button>
+          <button type="button" data-tab="search">Search</button>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main class="workspace" id="top">
+    <div class="main-stack">
+      <section class="window composer-window" aria-labelledby="composer-title">
+        <div class="titlebar">
+          <span class="control" aria-hidden="true"></span>
+          <span class="window-title" id="composer-title">New Post</span>
+          <span class="zoom" aria-hidden="true"></span>
+        </div>
+        <div class="window-body">
+          <form class="composer" id="compose-form">
+            <div class="compose-top">
+              <a class="avatar" href="#profile" aria-label="打开 Editor 的资料">ED</a>
+              <div class="compose-id">
+                <strong>Editor</strong>
+                <span class="handle">@editor · now</span>
+              </div>
+              <div class="segmented" aria-label="Post format">
+                <button class="is-active" type="button" data-compose-mode="post">Post</button>
+                <button type="button" data-compose-mode="link">Link</button>
+                <button type="button" data-compose-mode="note">Note</button>
+              </div>
+            </div>
+            <label class="sr-only" for="compose-text">发布内容</label>
+            <textarea class="textarea" id="compose-text" rows="3" placeholder="现在正在发生什么？"></textarea>
+            <div class="compose-attachments">
+              <button class="attachment-button" type="button" id="attach-button">＋ Add image</button>
+              <span id="attachment-hint">纯文本优先；链接、图片和回复都属于同一条记录。</span>
+            </div>
+            <div class="compose-footer">
+              <span class="compose-hint" id="compose-status">⌘↵ 发布 · 标题可选</span>
+              <button class="push default" type="submit">Publish</button>
+            </div>
+          </form>
+          <div class="statusbar">
+            <span class="grow">Front-end publishing · plain text, links and media</span>
+            <span>Draft ready</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="window feed-window" aria-labelledby="feed-title">
+        <div class="titlebar">
+          <span class="control" aria-hidden="true"></span>
+          <span class="window-title" id="feed-title">Birds — Live Feed</span>
+          <span class="zoom" aria-hidden="true"></span>
+        </div>
+        <div class="window-body">
+          <div class="live-banner" id="new-posts-banner" hidden>
+            <span><strong id="pending-count">1</strong> 条新消息已经到达</span>
+            <button class="push small" type="button" id="show-new">显示新消息</button>
+          </div>
+
+          <form class="findstrip" id="search-form">
+            <label class="sr-only" for="search-input">搜索信息流</label>
+            <input class="textfield" id="search-input" type="search" placeholder="Search the stream" autocomplete="off">
+            <button class="push small" type="submit">Search</button>
+            <div class="segmented" aria-label="Feed view">
+              <button class="is-active" type="button" data-tab="live">Live</button>
+              <button type="button" data-tab="following">Following</button>
+            </div>
+          </form>
+
+          <div class="feed-head">
+            <span><strong id="feed-label">Live</strong> · <span id="feed-description">ordered by recent activity</span></span>
+            <span id="post-count">1,284 posts</span>
+          </div>
+
+          <div class="post-list" id="post-list">
+            <article id="p1" class="post" data-post-id="p1" data-topic="Editorial" data-following="true" data-search="首页 正在发生 出版流 长文 短帖 回复 bump latest reply">
+              <a class="avatar" href="#profile" aria-label="打开张衡的资料">张衡</a>
+              <div class="post-main">
+                <div class="meta"><a href="#profile"><strong>张衡</strong></a> <span class="handle">@zhangheng</span> · <a href="#p1">今天 21:42</a></div>
+                <div class="bodytext">
+                  <p>如果首页是一条“正在发生的出版流”，长文和短帖其实不需要两套容器。差别只在正文长度，不在 UI 身份。</p>
+                  <p>回复发生时，旧帖重新浮上来，但首页只露出最新回复的一小段；完整关系留在线程页。</p>
+                </div>
+                <div class="post-tools">
+                  <button class="tool-button" type="button" data-action="reply">Reply <span class="reply-count">6</span></button>
+                  <button class="tool-button" type="button" data-action="like" aria-pressed="false"><span class="like-symbol">♡</span> <span class="like-count">14</span></button>
+                  <button class="tool-button" type="button" data-action="bookmark" aria-pressed="false">Save</button>
+                  <a class="tool-link" href="#p1">Permalink</a>
+                  <a class="topic-tag" href="#topics">Editorial</a>
+                </div>
+                <div class="latest-reply"><strong>Lin</strong><span>我赞成 bump，但最新回复摘要最多两行，否则首页会重新变成评论区。</span></div>
+                <div class="reply-box" hidden>
+                  <label class="sr-only" for="reply-p1">回复张衡</label>
+                  <textarea id="reply-p1" rows="2" placeholder="Reply to this thread…"></textarea>
+                  <button class="push small" type="button" data-action="submit-reply">Reply</button>
+                </div>
+              </div>
+            </article>
+
+            <article id="p2" class="post" data-post-id="p2" data-topic="Design" data-following="true" data-search="P2 编辑室 发布框 文章卡片 共同记录 Topics Finder">
+              <a class="avatar" href="#profile" aria-label="打开 Aya 的资料">AY</a>
+              <div class="post-main">
+                <div class="meta"><a href="#profile"><strong>Aya</strong></a> <span class="handle">@aya</span> · <a href="#p2">今天 20:17</a></div>
+                <div class="bodytext">
+                  <h2>把 P2 做得更像一间编辑室</h2>
+                  <p>我希望发布框永远在最上面，下面不是“文章卡片”，而是一份不断更新的共同记录。主题只是索引，不应该把信息流切碎。</p>
+                </div>
+                <div class="post-tools">
+                  <button class="tool-button" type="button" data-action="reply">Reply <span class="reply-count">3</span></button>
+                  <button class="tool-button" type="button" data-action="like" aria-pressed="false"><span class="like-symbol">♡</span> <span class="like-count">22</span></button>
+                  <button class="tool-button" type="button" data-action="bookmark" aria-pressed="false">Save</button>
+                  <a class="tool-link" href="#p2">Permalink</a>
+                  <a class="topic-tag" href="#topics">Design</a>
+                </div>
+                <div class="latest-reply"><strong>Mori</strong><span>右侧 Topics 窗口可以保留，它更像 Finder 的辅助窗口，而不是网站 sidebar。</span></div>
+                <div class="reply-box" hidden>
+                  <label class="sr-only" for="reply-p2">回复 Aya</label>
+                  <textarea id="reply-p2" rows="2" placeholder="Reply to this thread…"></textarea>
+                  <button class="push small" type="button" data-action="submit-reply">Reply</button>
+                </div>
+              </div>
+            </article>
+
+            <article id="p3" class="post" data-post-id="p3" data-topic="Design" data-following="false" data-search="Macintosh 窗口 边界 状态 内容区 控制区 link card">
+              <a class="avatar" href="#profile" aria-label="打开 Mori 的资料">MO</a>
+              <div class="post-main">
+                <div class="meta"><a href="#profile"><strong>Mori</strong></a> <span class="handle">@mori</span> · <a href="#p3">今天 18:54</a></div>
+                <div class="bodytext">
+                  <p>Macintosh 风格最重要的不是像素装饰，而是每件东西都有明确的窗口边界和状态。内容区应该白，控制区应该灰；不要把两者混成现代卡片。</p>
+                  <a class="linkcard" href="#link-preview">
+                    <span class="link-thumb" aria-hidden="true"></span>
+                    <span class="link-copy"><strong>Classic interface notes</strong><span>A short external reference shown as a subdued inset object.</span><small>example.org</small></span>
+                  </a>
+                </div>
+                <div class="post-tools">
+                  <button class="tool-button" type="button" data-action="reply">Reply</button>
+                  <button class="tool-button" type="button" data-action="like" aria-pressed="false"><span class="like-symbol">♡</span> <span class="like-count">17</span></button>
+                  <button class="tool-button" type="button" data-action="bookmark" aria-pressed="false">Save</button>
+                  <a class="tool-link" href="#p3">Permalink</a>
+                  <a class="topic-tag" href="#topics">Design</a>
+                </div>
+                <div class="reply-box" hidden>
+                  <label class="sr-only" for="reply-p3">回复 Mori</label>
+                  <textarea id="reply-p3" rows="2" placeholder="Reply to this thread…"></textarea>
+                  <button class="push small" type="button" data-action="submit-reply">Reply</button>
+                </div>
+              </div>
+            </article>
+
+            <article id="p4" class="post" data-post-id="p4" data-topic="Tokyo" data-following="true" data-search="东京 砧公园 图片 附件 正文 media">
+              <a class="avatar" href="#profile" aria-label="打开 Lin 的资料">LI</a>
+              <div class="post-main">
+                <div class="meta"><a href="#profile"><strong>Lin</strong></a> <span class="handle">@lin</span> · <a href="#p4">昨天 23:08</a></div>
+                <div class="bodytext">
+                  <p>今天在砧公园走了一圈。把照片作为帖子的附件比做成 hero image 更适合这个系统。</p>
+                  <div class="media-placeholder" role="img" aria-label="抽象公园示意图">
+                    <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <rect width="640" height="260" fill="#deded9"/>
+                      <rect y="175" width="640" height="85" fill="#c8d3bf"/>
+                      <path d="M0 190 C120 130,220 220,340 160 S540 160,640 120 V260 H0Z" fill="#aebfa4"/>
+                      <circle cx="500" cy="62" r="32" fill="#f5efc9"/>
+                      <path d="M110 185 L145 88 L180 185Z" fill="#7f9279"/>
+                      <path d="M155 185 L195 72 L235 185Z" fill="#70866c"/>
+                      <rect x="135" y="178" width="12" height="38" fill="#777"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="post-tools">
+                  <button class="tool-button" type="button" data-action="reply">Reply <span class="reply-count">2</span></button>
+                  <button class="tool-button" type="button" data-action="like" aria-pressed="false"><span class="like-symbol">♡</span> <span class="like-count">31</span></button>
+                  <button class="tool-button" type="button" data-action="bookmark" aria-pressed="false">Save</button>
+                  <a class="tool-link" href="#p4">Permalink</a>
+                  <a class="topic-tag" href="#topics">Tokyo</a>
+                </div>
+                <div class="latest-reply"><strong>张衡</strong><span>图片是正文的一部分，而不是把整条 feed 变成视觉卡片。</span></div>
+                <div class="reply-box" hidden>
+                  <label class="sr-only" for="reply-p4">回复 Lin</label>
+                  <textarea id="reply-p4" rows="2" placeholder="Reply to this thread…"></textarea>
+                  <button class="push small" type="button" data-action="submit-reply">Reply</button>
+                </div>
+              </div>
+            </article>
+
+            <article id="p5" class="post" data-post-id="p5" data-topic="Notes" data-following="false" data-search="首页 共同工作 WordPress archive RSS REST renderer">
+              <a class="avatar" href="#profile" aria-label="打开 Editor 的资料">ED</a>
+              <div class="post-main">
+                <div class="meta"><a href="#profile"><strong>Editor</strong></a> <span class="handle">@editor</span> · <a href="#p5">9 月 17 日 16:30</a></div>
+                <div class="bodytext">
+                  <blockquote>“首页不是目录，而是共同工作的表面。”</blockquote>
+                  <p>WordPress 负责 archive、RSS、REST 和评论树，前端只负责把它们重新排成一张工作桌。</p>
+                </div>
+                <div class="post-tools">
+                  <button class="tool-button" type="button" data-action="reply">Reply <span class="reply-count">9</span></button>
+                  <button class="tool-button" type="button" data-action="like" aria-pressed="false"><span class="like-symbol">♡</span> <span class="like-count">28</span></button>
+                  <button class="tool-button" type="button" data-action="bookmark" aria-pressed="false">Save</button>
+                  <a class="tool-link" href="#p5">Permalink</a>
+                  <a class="topic-tag" href="#topics">Notes</a>
+                </div>
+                <div class="latest-reply"><strong>Aya</strong><span>这也意味着搜索页、作者页、主题页都应该复用同一个 post renderer。</span></div>
+                <div class="reply-box" hidden>
+                  <label class="sr-only" for="reply-p5">回复 Editor</label>
+                  <textarea id="reply-p5" rows="2" placeholder="Reply to this thread…"></textarea>
+                  <button class="push small" type="button" data-action="submit-reply">Reply</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="empty-state" id="empty-state" hidden>No posts match this view.</div>
+          <div class="pager">
+            <button class="push small" type="button" id="newer-button">← Newer</button>
+            <span class="stats">Page 1 · live</span>
+            <button class="push small" type="button" id="older-button">Older →</button>
+          </div>
+          <div class="statusbar">
+            <span class="grow">24 members · <span id="footer-count">1,284</span> posts</span>
+            <span id="last-updated">Updated just now</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="rail" aria-label="Feed context">
+      <section class="window inactive" id="topics">
+        <div class="titlebar"><span class="control" aria-hidden="true"></span><span class="window-title">Topics</span><span class="zoom" aria-hidden="true"></span></div>
+        <div class="window-body">
+          <nav class="rail-list" aria-label="Topics">
+            <button type="button" data-topic="all"><span>All activity</span><span class="count">1,284</span></button>
+            <button type="button" data-topic="Editorial"><span>Editorial</span><span class="count">342</span></button>
+            <button type="button" data-topic="Design"><span>Design</span><span class="count">218</span></button>
+            <button type="button" data-topic="Tokyo"><span>Tokyo</span><span class="count">87</span></button>
+            <button type="button" data-topic="Notes"><span>Notes</span><span class="count">164</span></button>
+          </nav>
+          <div class="statusbar"><span class="grow">Browse the corpus</span><span>Topics</span></div>
+        </div>
+      </section>
+
+      <section class="window inactive">
+        <div class="titlebar"><span class="control" aria-hidden="true"></span><span class="window-title">People Online</span><span class="zoom" aria-hidden="true"></span></div>
+        <div class="window-body">
+          <div class="listbox">
+            <a class="online-row" href="#profile"><span class="mini-avatar">ZH</span><span class="online-name"><strong>张衡</strong><small>@zhangheng</small></span><span class="online-dot" title="online"></span></a>
+            <a class="online-row" href="#profile"><span class="mini-avatar">AY</span><span class="online-name"><strong>Aya</strong><small>@aya</small></span><span class="online-dot" title="online"></span></a>
+            <a class="online-row" href="#profile"><span class="mini-avatar">MO</span><span class="online-name"><strong>Mori</strong><small>@mori</small></span><span class="online-dot" title="online"></span></a>
+          </div>
+          <div class="statusbar"><span class="grow">People who are here now</span><span>3 online</span></div>
+        </div>
+      </section>
+
+      <section class="window inactive">
+        <div class="titlebar"><span class="control" aria-hidden="true"></span><span class="window-title">Live Monitor</span><span class="zoom" aria-hidden="true"></span></div>
+        <div class="window-body">
+          <div class="rail-note">
+            <strong>即时发布 · 即时阅读 · 即时互动</strong>
+            <p>新帖进入最前面，回复保持在线程里。首页只露出一小段变化，让信息流保持可读。</p>
+            <button class="push small" type="button" id="demo-update">模拟一条新消息</button>
+          </div>
+          <div class="statusbar"><span class="grow">SSE / REST ready</span><span id="connection-state">Connected</span></div>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

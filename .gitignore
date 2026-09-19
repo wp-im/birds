@@ -1,0 +1,14 @@
+# Generated release archives
+/build/
+
+# Local and operating-system files
+.DS_Store
+*.log
+*.sql
+.env
+.env.*
+wp-config.php
+
+# Local WordPress/runtime data
+wp-content/
+node_modules/

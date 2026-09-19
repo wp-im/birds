@@ -1,0 +1,10 @@
+type\tslug\ttitle\tfile\tcategory
+page\tbirds\tBirds\tfront-page.html\t
+page\tabout-birds\tAbout Birds\tabout.html\t
+page\tinstall-birds\tInstall Birds\tinstall.html\t
+page\tdesign-notes\tDesign Notes\tdesign-notes.html\t
+page\tchangelog\tChangelog\tchangelog.html\t
+page\tnotes\tNotes\t\t
+post\twhy-a-feed\tWhy a feed?\tposts/01-why-a-feed.html\tNotes
+post\tmac-os-and-the-stream\tMac OS and the stream\tposts/02-mac-os-and-the-stream.html\tDesign
+post\tbirds-and-wordpress-core\tBirds and WordPress Core\tposts/03-birds-and-wordpress-core.html\tDevelopment
