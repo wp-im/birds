@@ -1,0 +1,395 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Birds 0.3.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/birds\n"
+"Last-Translator: OpenAI Codex\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-24T12:52:00+00:00\n"
+"PO-Revision-Date: 2026-09-24 12:57+0000\n"
+"Language: ja\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: birds\n"
+
+#. Theme Name of the theme
+#: style.css
+#: index.php:13
+msgid "Birds"
+msgstr "Birds"
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://wordpress.im/"
+msgstr "https://wordpress.im/"
+
+#. Description of the theme
+#: style.css
+msgid "A minimal WordPress Classic Theme shaped like a P2 stream in a Classic Mac OS 9 desktop."
+msgstr "Classic Mac OS 9 のデスクトップをモチーフにした、P2 スタイルのシンプルな WordPress クラシックテーマです。"
+
+#. Author of the theme
+#: style.css
+msgid "wp-im"
+msgstr "wp-im"
+
+#: 404.php:15
+msgid "Not Found"
+msgstr "ページが見つかりません"
+
+#: 404.php:20
+msgid "This page is not in the current stream."
+msgstr "このページは現在のフィードにありません。"
+
+#: 404.php:21
+msgid "Return to Live Feed"
+msgstr "フィードに戻る"
+
+#: archive.php:18
+#: front-page.php:37
+#: home.php:14
+#: template-parts/feed-page.php:18
+msgid "ordered by recent publication"
+msgstr "新着順"
+
+#: author.php:18
+#, php-format
+msgid "Author — %s"
+msgstr "投稿者：%s"
+
+#: author.php:19
+msgid "the same post stream, viewed by author"
+msgstr "投稿者別の投稿一覧"
+
+#: comments.php:15
+#: comments.php:36
+msgid "Replies"
+msgstr "返信"
+
+#: comments.php:34
+msgid "Comment navigation"
+msgstr "コメントナビゲーション"
+
+#: comments.php:35
+#: template-parts/feed-page.php:39
+msgid "← Newer"
+msgstr "← 新しいコメント"
+
+#: comments.php:37
+#: template-parts/feed-page.php:40
+msgid "Older →"
+msgstr "古いコメント →"
+
+#: comments.php:41
+msgid "No replies yet. Start the thread."
+msgstr "返信はまだありません。最初の返信を投稿してみましょう。"
+
+#: comments.php:47
+msgid "Reply to this thread"
+msgstr "このスレッドに返信"
+
+#: comments.php:48
+#: template-parts/post.php:41
+msgid "Reply"
+msgstr "返信"
+
+#: comments.php:51
+msgid "Your reply"
+msgstr "コメントを入力"
+
+#: footer.php:11
+msgid "WordPress Classic Theme"
+msgstr "WordPress クラシックテーマ"
+
+#: footer.php:12
+#: template-parts/context-rail.php:44
+#: template-parts/feed-page.php:144
+msgid "WordPress Core"
+msgstr "WordPress コア"
+
+#: front-page.php:36
+#: home.php:13
+#: template-parts/feed-page.php:17
+msgid "Live Feed"
+msgstr "フィード"
+
+#: functions.php:40
+msgid "Primary Menu"
+msgstr "メインメニュー"
+
+#: functions.php:157
+msgid "Your reply is awaiting moderation."
+msgstr "コメントは承認待ちです。"
+
+#: header.php:19
+msgid "Birds home"
+msgstr "Birds のホーム"
+
+#: header.php:29
+msgid "Primary navigation"
+msgstr "メインナビゲーション"
+
+#: header.php:40
+#: header.php:74
+msgid "Live"
+msgstr "フィード"
+
+#: header.php:41
+#: header.php:75
+#: template-parts/feed-page.php:115
+msgid "Search"
+msgstr "検索"
+
+#: header.php:42
+#: header.php:76
+#: template-parts/context-rail.php:21
+#: template-parts/context-rail.php:23
+#: template-parts/context-rail.php:32
+msgid "Topics"
+msgstr "カテゴリー"
+
+#: header.php:48
+msgid "Log out"
+msgstr "ログアウト"
+
+#: header.php:50
+msgid "Log in"
+msgstr "ログイン"
+
+#: header.php:54
+msgid "Menu"
+msgstr "メニュー"
+
+#: header.php:64
+msgid "Mobile navigation"
+msgstr "モバイルナビゲーション"
+
+#: index.php:14
+msgid "the WordPress content stream"
+msgstr "WordPress の投稿フィード"
+
+#: page.php:23
+#: template-parts/post.php:38
+msgid "Pages:"
+msgstr "ページ："
+
+#: search.php:16
+#, php-format
+msgid "Search — %s"
+msgstr "%s の検索結果"
+
+#: search.php:17
+msgid "the same post renderer, filtered by WordPress search"
+msgstr "WordPress の検索結果を同じ投稿レイアウトで表示"
+
+#: single.php:15
+#: template-parts/post.php:44
+msgid "Thread"
+msgstr "スレッド"
+
+#: single.php:26
+msgid "← Previous"
+msgstr "← 前へ"
+
+#: single.php:26
+msgid "Next →"
+msgstr "次へ →"
+
+#: template-parts/composer.php:15
+msgid "New Post"
+msgstr "新規投稿"
+
+#: template-parts/composer.php:23
+#: template-parts/post.php:18
+#, php-format
+msgid "Open %s profile"
+msgstr "%s さんのプロフィールを表示"
+
+#: template-parts/composer.php:28
+msgid "now"
+msgstr "たった今"
+
+#: template-parts/composer.php:32
+msgid "Post content"
+msgstr "投稿本文"
+
+#: template-parts/composer.php:33
+msgid "What is happening?"
+msgstr "近況を共有しましょう"
+
+#: template-parts/composer.php:36
+msgid "Topic"
+msgstr "カテゴリー"
+
+#: template-parts/composer.php:38
+msgid "No topic"
+msgstr "カテゴリーなし"
+
+#: template-parts/composer.php:43
+msgid "Plain text first; links and media can remain part of the same post."
+msgstr "まずはテキストで。リンクやメディアも同じ投稿に含められます。"
+
+#: template-parts/composer.php:46
+msgid "WordPress post · no title required"
+msgstr "WordPress の投稿 · タイトルは不要です"
+
+#: template-parts/composer.php:47
+msgid "Publish"
+msgstr "投稿する"
+
+#: template-parts/composer.php:54
+msgid "Publishing is for members."
+msgstr "投稿するにはログインが必要です。"
+
+#: template-parts/composer.php:55
+msgid "Log in to write a short note directly from the feed."
+msgstr "ログインすると、フィードから直接投稿できます。"
+
+#: template-parts/composer.php:56
+msgid "Log in to post"
+msgstr "ログインして投稿"
+
+#: template-parts/composer.php:60
+msgid "Front-end publishing · WordPress Core"
+msgstr "フロントエンド投稿 · WordPress コア"
+
+#: template-parts/composer.php:61
+msgid "Ready"
+msgstr "準備完了"
+
+#: template-parts/context-rail.php:19
+msgid "Feed context"
+msgstr "フィードの案内"
+
+#: template-parts/context-rail.php:29
+msgid "Topics will appear here after the first category is created."
+msgstr "カテゴリーを作成すると、ここに表示されます。"
+
+#: template-parts/context-rail.php:32
+msgid "Browse the corpus"
+msgstr "投稿一覧を表示"
+
+#: template-parts/context-rail.php:37
+msgid "About"
+msgstr "このサイトについて"
+
+#: template-parts/context-rail.php:42
+msgid "A small WordPress publishing surface for notes, links and threaded replies."
+msgstr "メモやリンク、スレッド形式の返信を共有できるシンプルな WordPress 投稿スペースです。"
+
+#: template-parts/context-rail.php:44
+msgid "Classic Theme"
+msgstr "クラシックテーマ"
+
+#: template-parts/feed-page.php:70
+msgid "A feed-first WordPress experience"
+msgstr "フィードを中心にした WordPress の投稿体験"
+
+#: template-parts/feed-page.php:92
+msgid "Your post is now in the Live Feed."
+msgstr "投稿をフィードに公開しました。"
+
+#: template-parts/feed-page.php:94
+msgid "Your post was updated."
+msgstr "投稿を更新しました。"
+
+#: template-parts/feed-page.php:96
+msgid "Your post was moved to the Trash."
+msgstr "投稿をゴミ箱へ移動しました。"
+
+#: template-parts/feed-page.php:98
+msgid "Your reply was updated."
+msgstr "返信を更新しました。"
+
+#: template-parts/feed-page.php:100
+msgid "Your reply was moved to the Trash."
+msgstr "返信をゴミ箱へ移動しました。"
+
+#: template-parts/feed-page.php:102
+msgid "Replies are open again."
+msgstr "返信を受け付ける設定にしました。"
+
+#: template-parts/feed-page.php:104
+msgid "Replies are now closed."
+msgstr "返信を締め切りました。"
+
+#: template-parts/feed-page.php:106
+msgid "Write something before publishing."
+msgstr "投稿内容を入力してください。"
+
+#: template-parts/feed-page.php:108
+msgid "You do not have permission to perform that action."
+msgstr "この操作を行う権限がありません。"
+
+#: template-parts/feed-page.php:110
+msgid "That action could not be completed. Please try again."
+msgstr "操作を完了できませんでした。もう一度お試しください。"
+
+#: template-parts/feed-page.php:113
+#: template-parts/feed-page.php:114
+msgid "Search the stream"
+msgstr "投稿を検索"
+
+#: template-parts/feed-page.php:120
+#: template-parts/feed-page.php:143
+msgid "posts"
+msgstr "件の投稿"
+
+#: template-parts/feed-page.php:130
+msgid "No posts match this view."
+msgstr "条件に一致する投稿はありません。"
+
+#: template-parts/feed-page.php:135
+msgid "Posts navigation"
+msgstr "投稿ナビゲーション"
+
+#: template-parts/feed-page.php:137
+#, php-format
+msgid "Page %1$d of %2$d"
+msgstr "%2$d ページ中 %1$d ページ"
+
+#: template-parts/post.php:45
+msgid "Permalink"
+msgstr "パーマリンク"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "小"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body"
+msgstr "本文"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr "大"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Desktop"
+msgstr "デスクトップ"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Chrome"
+msgstr "ウィンドウ枠"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Paper"
+msgstr "用紙"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr "文字"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Link"
+msgstr "リンク"

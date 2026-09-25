@@ -53,7 +53,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="rail-note">
 				<strong><?php esc_html_e( 'Publishing is for members.', 'birds' ); ?></strong>
 				<p><?php esc_html_e( 'Log in to write a short note directly from the feed.', 'birds' ); ?></p>
-				<a class="push small" href="<?php echo esc_url( wp_login_url( home_url( '/' ) ) ); ?>"><?php esc_html_e( 'Log in to post', 'birds' ); ?></a>
+				<a class="push small" href="<?php echo esc_url( add_query_arg( 'redirect_to', home_url( '/' ), home_url( '/login/' ) ) ); ?>"><?php esc_html_e( 'Log in to post', 'birds' ); ?></a>
 			</div>
 		<?php endif; ?>
 		<div class="statusbar">

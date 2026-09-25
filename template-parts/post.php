@@ -23,7 +23,7 @@ $latest     = birds_latest_comment( get_the_ID() );
 			<a href="<?php echo esc_url( $author_url ); ?>"><strong><?php the_author(); ?></strong></a>
 			<span class="handle">@<?php echo esc_html( get_the_author_meta( 'user_nicename' ) ); ?></span>
 			·
-			<a href="<?php the_permalink(); ?>"><time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_date( 'Y-m-d H:i' ) ); ?></time></a>
+			<a href="<?php the_permalink(); ?>"><time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ) ) ); ?></time></a>
 		</div>
 		<?php if ( get_the_title() ) : ?>
 			<?php if ( is_singular( 'post' ) ) : ?>

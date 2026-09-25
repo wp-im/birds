@@ -13,11 +13,16 @@
   const toast = document.querySelector('#toast');
   const composeText = document.querySelector('#compose-text');
   const composeStatus = document.querySelector('#compose-status');
+  const paletteSelect = document.querySelector('#palette-select');
   let activeTab = 'live';
   let activeTopic = 'all';
   let totalPosts = 1284;
   let pendingPosts = [];
   let toastTimer;
+
+  paletteSelect.addEventListener('change', function () {
+    document.body.dataset.palette = paletteSelect.value;
+  });
 
   function escapeHtml(value) {
     return String(value)

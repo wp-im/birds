@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?><?php echo function_exists( 'birds_demo_palette_body_attribute' ) ? birds_demo_palette_body_attribute() : ''; ?>>
 <?php wp_body_open(); ?>
 
 <header class="menubar">
@@ -43,11 +43,14 @@
 		<?php endif; ?>
 	</div>
 	<div class="menu-right">
+		<?php if ( function_exists( 'birds_demo_palette_control' ) ) : ?>
+			<?php birds_demo_palette_control(); ?>
+		<?php endif; ?>
 		<?php if ( is_user_logged_in() ) : ?>
 			<span class="small-status"><?php echo esc_html( wp_get_current_user()->display_name ); ?></span>
 			<a class="menu-link" href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>"><?php esc_html_e( 'Log out', 'birds' ); ?></a>
 		<?php else : ?>
-			<a class="menu-link" href="<?php echo esc_url( wp_login_url( home_url( '/' ) ) ); ?>"><?php esc_html_e( 'Log in', 'birds' ); ?></a>
+			<a class="menu-link" href="<?php echo esc_url( add_query_arg( 'redirect_to', home_url( '/' ), home_url( '/login/' ) ) ); ?>"><?php esc_html_e( 'Log in', 'birds' ); ?></a>
 		<?php endif; ?>
 		<span class="clock"><?php echo esc_html( current_time( 'H:i' ) ); ?></span>
 		<details class="mobile-menu">

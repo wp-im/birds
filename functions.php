@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BIRDS_VERSION', '0.3.0' );
+define( 'BIRDS_VERSION', '0.4.0' );
 
 /**
  * Set up the theme.
@@ -57,6 +57,13 @@ function birds_enqueue_assets() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'birds_enqueue_assets' );
+
+require_once get_template_directory() . '/inc/social-preview.php';
+
+$birds_demo_palette = get_template_directory() . '/inc/demo-palette.php';
+if ( is_readable( $birds_demo_palette ) ) {
+	require_once $birds_demo_palette;
+}
 
 /**
  * Add a small theme class to the body.

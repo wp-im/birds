@@ -1,0 +1,396 @@
+# Copyright (C) 2026 wp-im
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Birds 0.3.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/birds\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-24T13:00:13+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: birds\n"
+
+#. Theme Name of the theme
+#: style.css
+#: index.php:13
+msgid "Birds"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://wordpress.im/"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "A minimal WordPress Classic Theme shaped like a P2 stream in a Classic Mac OS 9 desktop."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "wp-im"
+msgstr ""
+
+#: 404.php:15
+msgid "Not Found"
+msgstr ""
+
+#: 404.php:20
+msgid "This page is not in the current stream."
+msgstr ""
+
+#: 404.php:21
+msgid "Return to Live Feed"
+msgstr ""
+
+#: archive.php:18
+#: front-page.php:37
+#: home.php:14
+#: template-parts/feed-page.php:18
+msgid "ordered by recent publication"
+msgstr ""
+
+#: author.php:18
+#, php-format
+msgid "Author — %s"
+msgstr ""
+
+#: author.php:19
+msgid "the same post stream, viewed by author"
+msgstr ""
+
+#: comments.php:15
+#: comments.php:36
+msgid "Replies"
+msgstr ""
+
+#: comments.php:34
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:35
+#: template-parts/feed-page.php:39
+msgid "← Newer"
+msgstr ""
+
+#: comments.php:37
+#: template-parts/feed-page.php:40
+msgid "Older →"
+msgstr ""
+
+#: comments.php:41
+msgid "No replies yet. Start the thread."
+msgstr ""
+
+#: comments.php:47
+msgid "Reply to this thread"
+msgstr ""
+
+#: comments.php:48
+#: template-parts/post.php:41
+msgid "Reply"
+msgstr ""
+
+#: comments.php:51
+msgid "Your reply"
+msgstr ""
+
+#: footer.php:11
+msgid "WordPress Classic Theme"
+msgstr ""
+
+#: footer.php:12
+#: template-parts/context-rail.php:44
+#: template-parts/feed-page.php:144
+msgid "WordPress Core"
+msgstr ""
+
+#: front-page.php:36
+#: home.php:13
+#: template-parts/feed-page.php:17
+msgid "Live Feed"
+msgstr ""
+
+#: functions.php:40
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:157
+msgid "Your reply is awaiting moderation."
+msgstr ""
+
+#: header.php:19
+msgid "Birds home"
+msgstr ""
+
+#: header.php:29
+msgid "Primary navigation"
+msgstr ""
+
+#: header.php:40
+#: header.php:74
+msgid "Live"
+msgstr ""
+
+#: header.php:41
+#: header.php:75
+#: template-parts/feed-page.php:115
+msgid "Search"
+msgstr ""
+
+#: header.php:42
+#: header.php:76
+#: template-parts/context-rail.php:21
+#: template-parts/context-rail.php:23
+#: template-parts/context-rail.php:32
+msgid "Topics"
+msgstr ""
+
+#: header.php:48
+msgid "Log out"
+msgstr ""
+
+#: header.php:50
+msgid "Log in"
+msgstr ""
+
+#: header.php:54
+msgid "Menu"
+msgstr ""
+
+#: header.php:64
+msgid "Mobile navigation"
+msgstr ""
+
+#: index.php:14
+msgid "the WordPress content stream"
+msgstr ""
+
+#: page.php:23
+#: template-parts/post.php:38
+msgid "Pages:"
+msgstr ""
+
+#: search.php:16
+#, php-format
+msgid "Search — %s"
+msgstr ""
+
+#: search.php:17
+msgid "the same post renderer, filtered by WordPress search"
+msgstr ""
+
+#: single.php:15
+#: template-parts/post.php:44
+msgid "Thread"
+msgstr ""
+
+#: single.php:26
+msgid "← Previous"
+msgstr ""
+
+#: single.php:26
+msgid "Next →"
+msgstr ""
+
+#: template-parts/composer.php:15
+msgid "New Post"
+msgstr ""
+
+#: template-parts/composer.php:23
+#: template-parts/post.php:18
+#, php-format
+msgid "Open %s profile"
+msgstr ""
+
+#: template-parts/composer.php:28
+msgid "now"
+msgstr ""
+
+#: template-parts/composer.php:32
+msgid "Post content"
+msgstr ""
+
+#: template-parts/composer.php:33
+msgid "What is happening?"
+msgstr ""
+
+#: template-parts/composer.php:36
+msgid "Topic"
+msgstr ""
+
+#: template-parts/composer.php:38
+msgid "No topic"
+msgstr ""
+
+#: template-parts/composer.php:43
+msgid "Plain text first; links and media can remain part of the same post."
+msgstr ""
+
+#: template-parts/composer.php:46
+msgid "WordPress post · no title required"
+msgstr ""
+
+#: template-parts/composer.php:47
+msgid "Publish"
+msgstr ""
+
+#: template-parts/composer.php:54
+msgid "Publishing is for members."
+msgstr ""
+
+#: template-parts/composer.php:55
+msgid "Log in to write a short note directly from the feed."
+msgstr ""
+
+#: template-parts/composer.php:56
+msgid "Log in to post"
+msgstr ""
+
+#: template-parts/composer.php:60
+msgid "Front-end publishing · WordPress Core"
+msgstr ""
+
+#: template-parts/composer.php:61
+msgid "Ready"
+msgstr ""
+
+#: template-parts/context-rail.php:19
+msgid "Feed context"
+msgstr ""
+
+#: template-parts/context-rail.php:29
+msgid "Topics will appear here after the first category is created."
+msgstr ""
+
+#: template-parts/context-rail.php:32
+msgid "Browse the corpus"
+msgstr ""
+
+#: template-parts/context-rail.php:37
+msgid "About"
+msgstr ""
+
+#: template-parts/context-rail.php:42
+msgid "A small WordPress publishing surface for notes, links and threaded replies."
+msgstr ""
+
+#: template-parts/context-rail.php:44
+msgid "Classic Theme"
+msgstr ""
+
+#: template-parts/feed-page.php:70
+msgid "A feed-first WordPress experience"
+msgstr ""
+
+#: template-parts/feed-page.php:92
+msgid "Your post is now in the Live Feed."
+msgstr ""
+
+#: template-parts/feed-page.php:94
+msgid "Your post was updated."
+msgstr ""
+
+#: template-parts/feed-page.php:96
+msgid "Your post was moved to the Trash."
+msgstr ""
+
+#: template-parts/feed-page.php:98
+msgid "Your reply was updated."
+msgstr ""
+
+#: template-parts/feed-page.php:100
+msgid "Your reply was moved to the Trash."
+msgstr ""
+
+#: template-parts/feed-page.php:102
+msgid "Replies are open again."
+msgstr ""
+
+#: template-parts/feed-page.php:104
+msgid "Replies are now closed."
+msgstr ""
+
+#: template-parts/feed-page.php:106
+msgid "Write something before publishing."
+msgstr ""
+
+#: template-parts/feed-page.php:108
+msgid "You do not have permission to perform that action."
+msgstr ""
+
+#: template-parts/feed-page.php:110
+msgid "That action could not be completed. Please try again."
+msgstr ""
+
+#: template-parts/feed-page.php:113
+#: template-parts/feed-page.php:114
+msgid "Search the stream"
+msgstr ""
+
+#: template-parts/feed-page.php:120
+#: template-parts/feed-page.php:143
+msgid "posts"
+msgstr ""
+
+#: template-parts/feed-page.php:130
+msgid "No posts match this view."
+msgstr ""
+
+#: template-parts/feed-page.php:135
+msgid "Posts navigation"
+msgstr ""
+
+#: template-parts/feed-page.php:137
+#, php-format
+msgid "Page %1$d of %2$d"
+msgstr ""
+
+#: template-parts/post.php:45
+msgid "Permalink"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Body"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Desktop"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Chrome"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Paper"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Ink"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Link"
+msgstr ""
