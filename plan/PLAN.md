@@ -1,4 +1,4 @@
-# Birds 0.5.1 upgrade
+# Birds 0.5.2 upgrade
 
 ## Boundary
 

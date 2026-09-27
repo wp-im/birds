@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BIRDS_VERSION', '0.5.1' );
+define( 'BIRDS_VERSION', '0.5.2' );
 
 /**
  * Set up the theme.

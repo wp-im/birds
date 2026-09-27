@@ -3,7 +3,7 @@ Contributors: wp-im
 Requires at least: 6.1
 Requires PHP: 7.4
 Tested up to: 7.1
-Stable tag: 0.5.1
+Stable tag: 0.5.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,10 @@ Upload the Birds ZIP through Appearance > Themes > Add New > Upload Theme, then 
 Birds is distributed under the GNU General Public License v2 or later.
 
 == Changelog ==
+
+= 0.5.2 =
+
+* Explicitly enabled WordPress threaded comment output so child replies render inside .children.
 
 = 0.5.1 =
 

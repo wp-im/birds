@@ -22,6 +22,7 @@ if ( post_password_required() ) {
 			wp_list_comments(
 				array(
 					'style'       => 'div',
+					'hierarchical' => 'threaded',
 					'short_ping'  => true,
 					'avatar_size' => 32,
 					'callback'    => 'birds_comment',
