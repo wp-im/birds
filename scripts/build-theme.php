@@ -3,10 +3,10 @@
  * Build fixed-palette Birds Theme packages and the local palette showcase CSS.
  *
  * Usage:
- *   php scripts/build-theme.php --all --version=0.4.0
- *   php scripts/build-theme.php --palette=mist-gray --version=0.4.0
+ *   php scripts/build-theme.php --all --version=0.5.0
+ *   php scripts/build-theme.php --palette=mist-gray --version=0.5.0
  *   php scripts/build-theme.php --demo
- *   php scripts/build-theme.php --demo-package --version=0.4.0
+ *   php scripts/build-theme.php --demo-package --version=0.5.0
  */
 
 if ( PHP_SAPI !== 'cli' ) {
@@ -206,6 +206,7 @@ try {
 
 		$root_files = array(
 			'404.php',
+			'account.css',
 			'archive.php',
 			'author.php',
 			'comments.php',
@@ -217,8 +218,10 @@ try {
 			'index.php',
 			'LICENSE',
 			'page.php',
+			'page-account.php',
 			'readme.txt',
 			'search.php',
+			'searchform.php',
 			'single.php',
 			'style.css',
 			'theme.json',

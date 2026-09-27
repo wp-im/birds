@@ -1,0 +1,138 @@
+/* Optional Account page component. Authentication stays outside the Theme. */
+.birds-account-content {
+	margin: 0 -1px;
+}
+.birds-account-intro {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 12px 13px;
+	border-bottom: 1px solid var(--line);
+	background: var(--paper-alt);
+}
+.birds-account-avatar {
+	width: 64px;
+	height: 64px;
+	flex: none;
+	border: 1px solid var(--ink);
+	background: var(--paper);
+	overflow: hidden;
+}
+.birds-account-avatar img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.birds-account-intro strong {
+	font-size: 15px;
+}
+.birds-account-intro p {
+	margin: 4px 0 0;
+	color: var(--muted);
+	font-size: 11px;
+}
+.birds-account-form {
+	padding: 12px 13px;
+	background: var(--paper);
+}
+.birds-account-avatar-field {
+	padding-bottom: 10px;
+	border-bottom: 1px solid var(--line);
+}
+.birds-account-avatar-field small {
+	display: block;
+	margin-top: 4px;
+	color: var(--muted);
+	font-size: 10px;
+}
+.birds-account-avatar-field .filefield {
+	display: block;
+	width: 100%;
+	padding: 4px 5px;
+	border: 1px solid var(--ink);
+	border-radius: 0;
+	background: var(--paper);
+	box-shadow: -1px -1px 0 var(--chrome-dark), 1px 1px 0 var(--paper);
+	font-size: 11px;
+}
+.birds-account-avatar-field .filefield::file-selector-button {
+	margin-right: 7px;
+	padding: 2px 7px;
+	border: 1px solid var(--ink);
+	border-radius: 2px;
+	background: var(--chrome);
+	color: var(--ink);
+	font: inherit;
+}
+.birds-account-fields {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 10px;
+}
+.birds-account-content > p,
+.birds-account-form p {
+	margin: 0 0 10px;
+}
+.birds-account-content > p:last-of-type {
+	margin-bottom: 0;
+}
+.birds-account-form label {
+	display: block;
+	margin-bottom: 4px;
+	color: var(--muted);
+	font-size: 11px;
+}
+.birds-account-actions {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+	margin-top: 4px;
+}
+.birds-account-facts {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 8px;
+	margin: 0;
+	padding: 10px 13px;
+	border-top: 1px solid var(--line);
+	background: var(--paper-alt);
+}
+.birds-account-facts div {
+	min-width: 0;
+}
+.birds-account-facts dt {
+	color: var(--muted);
+	font-size: 10px;
+}
+.birds-account-facts dd {
+	margin: 2px 0 0;
+	overflow-wrap: anywhere;
+	font-size: 12px;
+}
+.birds-account-logout {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin: 0 !important;
+	padding: 10px 13px;
+	border-top: 1px solid var(--line);
+	color: var(--muted);
+	font-size: 11px;
+	background: var(--paper-alt);
+}
+.birds-account-logout .core-danger {
+	color: var(--danger);
+	white-space: nowrap;
+}
+@media (max-width: 640px) {
+	.birds-account-fields,
+	.birds-account-facts {
+		grid-template-columns: 1fr;
+	}
+	.birds-account-intro {
+		align-items: flex-start;
+	}
+}

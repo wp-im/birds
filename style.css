@@ -3,7 +3,7 @@ Theme Name: Birds
 Theme URI: https://wordpress.im/
 Author: wp-im
 Description: A minimal WordPress Classic Theme shaped like a P2 stream in a Classic Mac OS 9 desktop.
-Version: 0.4.0
+Version: 0.5.0
 Requires at least: 6.1
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -76,6 +76,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .menu-left, .menu-right { display: flex; align-items: center; gap: 3px; min-width: 0; }
 .brand { display: inline-flex; align-items: center; gap: 6px; padding: 2px 7px; color: var(--ink); text-decoration: none; font-weight: 700; white-space: nowrap; }
 .brand-mark { width: 12px; height: 12px; border: 1px solid var(--ink); background: linear-gradient(135deg, var(--paper) 0 49%, var(--ink) 50% 100%); }
+.brand-logo { display: block; width: 16px; height: 16px; border: 1px solid var(--ink); object-fit: cover; }
 .menu-link, .sheet button { border: 1px solid transparent; background: transparent; color: var(--ink); padding: 2px 8px; }
 .menu-link:hover, .menu-link.is-active, .sheet button:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 .theme-menu { display: flex; align-items: center; gap: 3px; list-style: none; margin: 0; padding: 0; }
@@ -89,7 +90,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .mobile-menu { display: none; position: relative; }
 .mobile-menu summary { list-style: none; cursor: pointer; padding: 2px 7px; border: 1px solid var(--ink); background: var(--paper); }
 .mobile-menu summary::-webkit-details-marker { display: none; }
-.sheet { position: absolute; right: 0; top: 22px; width: 180px; padding: 4px; background: var(--chrome); border: 1px solid var(--ink); box-shadow: 2px 2px 0 var(--shadow); }
+.sheet { position: absolute; left: 0; top: 22px; width: 180px; padding: 4px; background: var(--chrome); border: 1px solid var(--ink); box-shadow: 2px 2px 0 var(--shadow); }
 .sheet button { display: block; width: 100%; text-align: left; }
 
 .workspace { width: min(1040px, calc(100% - 28px)); flex: 1 0 auto; margin: 20px auto 28px; display: grid; grid-template-columns: minmax(0, var(--content)) minmax(210px, var(--rail)); gap: var(--gap); align-items: start; }
@@ -127,6 +128,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .compose-id strong { display: block; font-size: 13px; }
 .handle { font-family: Monaco, "Courier New", monospace; font-size: 10px; color: var(--muted); }
 .avatar { width: 38px; height: 38px; flex: none; display: flex; align-items: center; justify-content: center; border: 1px solid var(--ink); background: var(--paper-alt); color: var(--ink); text-decoration: none; font-weight: 700; overflow: hidden; }
+.compose-title { margin-top: 8px; }
 .compose-area { margin-top: 8px; }
 .compose-attachments { display: flex; align-items: center; gap: 8px; margin-top: 7px; color: var(--muted); font-size: 11px; }
 .attachment-button { padding: 0 5px; border: 1px solid var(--chrome-dark); background: var(--paper-alt); color: var(--ink); font-size: 11px; }
@@ -258,7 +260,7 @@ body.admin-bar { --adminbar-offset: 32px; }
   .compose-attachments span { line-height: 1.35; }
   .live-banner { align-items: flex-start; flex-direction: column; }
   .linkcard { grid-template-columns: 56px minmax(0, 1fr); }
-  .post-navigation { grid-template-columns: 1fr; }
+  .post-navigation .nav-links { grid-template-columns: 1fr; }
   .post-navigation .nav-next { text-align: left; }
 }
 /* WordPress theme extensions */
@@ -489,38 +491,6 @@ body.admin-bar { --adminbar-offset: 32px; }
 .page-content.bodytext {
   max-width: 76ch;
 }
-.google-only-login {
-  max-width: 360px;
-  margin: 4px auto 0;
-  padding: 14px 12px 15px;
-  border: 1px solid var(--ink);
-  background: var(--paper-alt);
-  text-align: center;
-  box-shadow: inset 1px 1px 0 var(--paper), inset -1px -1px 0 var(--line);
-}
-.google-only-login__intro {
-  margin: 0 0 12px;
-  color: var(--ink);
-}
-.google-only-login__message,
-.google-only-login__unavailable {
-  margin: 0 0 10px;
-  padding: 6px 7px;
-  border: 1px solid var(--line);
-  background: var(--yellow);
-  color: var(--ink);
-  font-size: 11px;
-}
-.google-only-login__unavailable {
-  margin-bottom: 0;
-  background: var(--paper-alt);
-}
-.google-only-login__action,
-.google-only-login .googlesitekit-sign-in-with-google__frontend-output-button {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
 .page-content h2 {
   margin-top: 18px;
 }
@@ -534,6 +504,9 @@ body.admin-bar { --adminbar-offset: 32px; }
   font-size: 11px;
 }
 .post-navigation {
+  display: block;
+}
+.post-navigation .nav-links {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
@@ -587,6 +560,32 @@ body.admin-bar { --adminbar-offset: 32px; }
 }
 .site-footer-meta {
   white-space: nowrap;
+}
+.footer-menu {
+  display: inline-flex;
+  gap: 8px;
+  margin-left: 8px;
+}
+.footer-menu a {
+  color: var(--muted);
+}
+.widget-content {
+  padding: 8px 10px;
+}
+.widget-title {
+  margin: 0 0 6px;
+  font-size: 13px;
+  line-height: 1.25;
+}
+.widget-content > :first-child {
+  margin-top: 0;
+}
+.widget-content > :last-child {
+  margin-bottom: 0;
+}
+.widget-content ul {
+  margin: 0;
+  padding-left: 18px;
 }
 
 @media (max-width: 780px) {

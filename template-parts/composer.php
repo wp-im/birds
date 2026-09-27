@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<span class="zoom" aria-hidden="true"></span>
 	</div>
 	<div class="window-body">
-		<?php if ( is_user_logged_in() && current_user_can( 'publish_posts' ) ) : ?>
+		<?php if ( is_user_logged_in() && current_user_can( 'publish_posts' ) && function_exists( 'birds_core_is_available' ) ) : ?>
 			<?php $current_user = wp_get_current_user(); ?>
 			<form class="composer" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 				<div class="compose-top">
@@ -28,10 +28,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<span class="handle">@<?php echo esc_html( $current_user->user_nicename ); ?> · <?php esc_html_e( 'now', 'birds' ); ?></span>
 					</div>
 				</div>
-					<div class="compose-area">
-						<label class="sr-only" for="birds-content"><?php esc_html_e( 'Post content', 'birds' ); ?></label>
-						<textarea class="textarea" id="birds-content" name="birds_content" rows="4" maxlength="10000" required placeholder="<?php esc_attr_e( 'What is happening?', 'birds' ); ?>"></textarea>
-					</div>
+				<div class="compose-title">
+					<label class="sr-only" for="birds-title"><?php esc_html_e( 'Title (optional)', 'birds' ); ?></label>
+					<input class="textfield" id="birds-title" type="text" name="birds_title" maxlength="200" placeholder="<?php esc_attr_e( 'Title (optional)', 'birds' ); ?>">
+				</div>
+				<div class="compose-area">
+					<label class="sr-only" for="birds-content"><?php esc_html_e( 'Post content', 'birds' ); ?></label>
+					<textarea class="textarea" id="birds-content" name="birds_content" rows="4" maxlength="10000" required placeholder="<?php esc_attr_e( 'What is happening?', 'birds' ); ?>"></textarea>
+				</div>
 				<div class="compose-attachments">
 					<label for="birds-category"><?php esc_html_e( 'Topic', 'birds' ); ?></label>
 					<select id="birds-category" name="birds_category">
@@ -49,11 +53,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<input type="hidden" name="action" value="birds_publish">
 				<?php wp_nonce_field( 'birds_publish_post', 'birds_nonce' ); ?>
 			</form>
+		<?php elseif ( is_user_logged_in() && current_user_can( 'publish_posts' ) ) : ?>
+			<div class="rail-note">
+				<strong><?php esc_html_e( 'Birds Core is required for publishing.', 'birds' ); ?></strong>
+				<p><?php esc_html_e( 'The Theme remains readable on its own; install the companion plugin to enable the Composer.', 'birds' ); ?></p>
+			</div>
 		<?php else : ?>
 			<div class="rail-note">
 				<strong><?php esc_html_e( 'Publishing is for members.', 'birds' ); ?></strong>
 				<p><?php esc_html_e( 'Log in to write a short note directly from the feed.', 'birds' ); ?></p>
-				<a class="push small" href="<?php echo esc_url( add_query_arg( 'redirect_to', home_url( '/' ), home_url( '/login/' ) ) ); ?>"><?php esc_html_e( 'Log in to post', 'birds' ); ?></a>
+				<a class="push small" href="<?php echo esc_url( birds_login_url( home_url( '/' ) ) ); ?>"><?php esc_html_e( 'Log in to post', 'birds' ); ?></a>
 			</div>
 		<?php endif; ?>
 		<div class="statusbar">

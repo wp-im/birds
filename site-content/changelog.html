@@ -1,5 +1,23 @@
 <p>Birds is moving from a visual prototype into a small, usable WordPress product.</p>
 
+<h2>0.5.0 · A reusable Classic Theme boundary</h2>
+<ul>
+<li>Added native Classic Widgets support for a replaceable Context Rail instead of hard-coded site-specific sidebar content.</li>
+<li>Added a compact Customizer surface for presentation choices: composer, rail, clock, footer metadata, feed size, and feed labels.</li>
+<li>Unified feed pagination through the Theme query layer and added a native reusable search form.</li>
+<li>Added a generic Account Page presentation contract with an optional Birds Core profile update flow.</li>
+<li>Moved fallback Open Graph and Twitter metadata ownership into Birds Core while keeping the Mac OS preview renderer in the Theme.</li>
+<li>Added reusable confirmation behavior for destructive front-end operations and removed site-specific login/account assumptions.</li>
+</ul>
+
+<h2>Birds Core 0.2.0 · Generic companion operations</h2>
+<ul>
+<li>Added capability-aware profile updates with optional local avatar uploads using native WordPress media APIs.</li>
+<li>Added filterable login and account URL contracts so site integrations can replace routes without changing the public package.</li>
+<li>Added SEO-plugin detection to avoid duplicate fallback metadata.</li>
+<li>Kept all content, comments, permissions, nonces, and persistence inside WordPress Core with no custom tables.</li>
+</ul>
+
 <h2>0.3.0 · Theme completeness</h2>
 <ul>
 <li>Added a compact front-page product introduction when a static WordPress front page is configured.</li>

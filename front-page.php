@@ -21,7 +21,7 @@ $feed_query = new WP_Query(
 	array(
 		'post_type'           => 'post',
 		'post_status'         => 'publish',
-		'posts_per_page'      => 20,
+		'posts_per_page'      => birds_theme_option( 'feed_per_page', 20 ),
 		'paged'               => $paged,
 		'ignore_sticky_posts' => false,
 	)
@@ -33,9 +33,9 @@ get_template_part(
 	array(
 		'intro'         => $front_intro,
 		'intro_title'   => $front_intro_title,
-		'title'         => __( 'Live Feed', 'birds' ),
-		'description'   => __( 'ordered by recent publication', 'birds' ),
-		'show_composer' => true,
+		'title'         => birds_theme_option( 'feed_title', __( 'Live Feed', 'birds' ) ),
+		'description'   => birds_theme_option( 'feed_description', __( 'ordered by recent publication', 'birds' ) ),
+		'show_composer' => birds_theme_option( 'show_composer', true ),
 		'query'         => $feed_query,
 	)
 );

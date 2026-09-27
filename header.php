@@ -17,7 +17,12 @@
 <header class="menubar">
 	<div class="menu-left">
 		<a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Birds home', 'birds' ); ?>">
-			<span class="brand-mark" aria-hidden="true"></span>
+			<?php $birds_logo_id = absint( get_theme_mod( 'custom_logo' ) ); ?>
+			<?php if ( $birds_logo_id ) : ?>
+				<?php echo wp_get_attachment_image( $birds_logo_id, 'thumbnail', false, array( 'class' => 'brand-logo', 'alt' => '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<?php else : ?>
+				<span class="brand-mark" aria-hidden="true"></span>
+			<?php endif; ?>
 			<span><?php bloginfo( 'name' ); ?></span>
 		</a>
 		<?php
@@ -39,20 +44,7 @@
 		<?php else : ?>
 			<a class="menu-link<?php echo ( is_front_page() || is_home() ) ? ' is-active' : ''; ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Live', 'birds' ); ?></a>
 			<a class="menu-link<?php echo is_search() ? ' is-active' : ''; ?>" href="<?php echo esc_url( get_search_link() ); ?>"><?php esc_html_e( 'Search', 'birds' ); ?></a>
-			<a class="menu-link<?php echo is_category() ? ' is-active' : ''; ?>" href="<?php echo esc_url( home_url( '/#topics' ) ); ?>"><?php esc_html_e( 'Topics', 'birds' ); ?></a>
 		<?php endif; ?>
-	</div>
-	<div class="menu-right">
-		<?php if ( function_exists( 'birds_demo_palette_control' ) ) : ?>
-			<?php birds_demo_palette_control(); ?>
-		<?php endif; ?>
-		<?php if ( is_user_logged_in() ) : ?>
-			<span class="small-status"><?php echo esc_html( wp_get_current_user()->display_name ); ?></span>
-			<a class="menu-link" href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>"><?php esc_html_e( 'Log out', 'birds' ); ?></a>
-		<?php else : ?>
-			<a class="menu-link" href="<?php echo esc_url( add_query_arg( 'redirect_to', home_url( '/' ), home_url( '/login/' ) ) ); ?>"><?php esc_html_e( 'Log in', 'birds' ); ?></a>
-		<?php endif; ?>
-		<span class="clock"><?php echo esc_html( current_time( 'H:i' ) ); ?></span>
 		<details class="mobile-menu">
 			<summary><?php esc_html_e( 'Menu', 'birds' ); ?></summary>
 			<div class="sheet">
@@ -61,14 +53,14 @@
 					echo wp_kses_post(
 						wp_nav_menu(
 							array(
-								'theme_location'  => 'primary',
-								'container'       => 'nav',
-								'container_class' => 'mobile-theme-nav',
+								'theme_location'       => 'primary',
+								'container'            => 'nav',
+								'container_class'      => 'mobile-theme-nav',
 								'container_aria_label' => __( 'Mobile navigation', 'birds' ),
-								'menu_class'      => 'theme-menu',
-								'fallback_cb'     => false,
-								'echo'            => false,
-								'depth'           => 1,
+								'menu_class'           => 'theme-menu',
+								'fallback_cb'          => false,
+								'echo'                 => false,
+								'depth'                => 1,
 							)
 						)
 					);
@@ -76,9 +68,21 @@
 				<?php else : ?>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Live', 'birds' ); ?></a>
 					<a href="<?php echo esc_url( get_search_link() ); ?>"><?php esc_html_e( 'Search', 'birds' ); ?></a>
-						<a class="<?php echo is_category() ? 'is-active' : ''; ?>" href="<?php echo esc_url( home_url( '/#topics' ) ); ?>"><?php esc_html_e( 'Topics', 'birds' ); ?></a>
 				<?php endif; ?>
 			</div>
 		</details>
+	</div>
+	<div class="menu-right">
+		<?php if ( function_exists( 'birds_demo_palette_control' ) ) : ?>
+			<?php birds_demo_palette_control(); ?>
+		<?php endif; ?>
+		<?php if ( is_user_logged_in() ) : ?>
+			<a class="menu-link small-status" href="<?php echo esc_url( birds_account_url() ); ?>" aria-label="<?php esc_attr_e( 'Open account settings', 'birds' ); ?>"><?php echo esc_html( wp_get_current_user()->display_name ); ?></a>
+		<?php else : ?>
+			<a class="menu-link" href="<?php echo esc_url( birds_login_url( home_url( '/' ) ) ); ?>"><?php esc_html_e( 'Log in', 'birds' ); ?></a>
+		<?php endif; ?>
+		<?php if ( birds_theme_option( 'show_clock', true ) ) : ?>
+			<span class="clock"><?php echo esc_html( current_time( 'H:i' ) ); ?></span>
+		<?php endif; ?>
 	</div>
 </header>

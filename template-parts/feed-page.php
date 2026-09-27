@@ -109,11 +109,7 @@ if ( is_array( $pagination ) ) {
 					<?php elseif ( 'error' === $status ) : ?>
 						<div class="live-banner" role="status"><?php esc_html_e( 'That action could not be completed. Please try again.', 'birds' ); ?></div>
 				<?php endif; ?>
-				<form class="findstrip" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<label class="sr-only" for="feed-search"><?php esc_html_e( 'Search the stream', 'birds' ); ?></label>
-					<input class="textfield" id="feed-search" type="search" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php esc_attr_e( 'Search the stream', 'birds' ); ?>">
-					<button class="push small" type="submit"><?php esc_html_e( 'Search', 'birds' ); ?></button>
-				</form>
+				<?php get_search_form( array( 'aria_label' => __( 'Search the stream', 'birds' ) ) ); ?>
 
 				<div class="feed-head">
 					<span><strong><?php echo esc_html( $feed_args['title'] ); ?></strong> · <?php echo esc_html( $feed_args['description'] ); ?></span>

@@ -41,7 +41,6 @@ if ( post_password_required() ) {
 			<div class="empty-state"><?php esc_html_e( 'No replies yet. Start the thread.', 'birds' ); ?></div>
 		<?php endif; ?>
 
-		<?php
 		comment_form(
 			array(
 				'title_reply'          => __( 'Reply to this thread', 'birds' ),
