@@ -41,7 +41,7 @@ Basic checks:
 find . -name '*.php' -exec php -l {} \;
 jq empty theme.json
 php scripts/build-theme.php --demo
-php scripts/build-theme.php --all --version=0.5.0
+php scripts/build-theme.php --all --version=0.5.1
 ```
 
 The repository's source archive is not an installable palette choice. Use the named ZIP assets on the Release page.
