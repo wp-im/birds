@@ -3,7 +3,7 @@ Theme Name: Birds
 Theme URI: https://wordpress.im/
 Author: wp-im
 Description: A minimal WordPress Classic Theme shaped like a P2 stream in a Classic Mac OS 9 desktop.
-Version: 0.5.2
+Version: 0.5.3
 Requires at least: 6.1
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -370,6 +370,11 @@ body.admin-bar { --adminbar-offset: 32px; }
 }
 .comments-list {
   padding: 0 12px;
+}
+.comment-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 .comment {
   padding: 9px 0;

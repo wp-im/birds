@@ -9,7 +9,7 @@ This is the reviewed content source for the public `wordpress.im/birds/` demo si
 - Front page: `Birds` (static Page)
 - Posts page: `Notes`
 - Primary language: English
-- Theme: Birds 0.5.2 fixed-palette release; the showcase deployment uses the demo switcher build
+- Theme: Birds 0.5.3 fixed-palette release; the showcase deployment uses the demo switcher build
 - Plugin: Birds Core 0.2.0
 
 ## Build order

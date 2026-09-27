@@ -18,17 +18,18 @@ if ( post_password_required() ) {
 	<div class="window-body">
 		<?php if ( have_comments() ) : ?>
 			<div class="comments-list">
+				<ul class="comment-list">
 				<?php
 			wp_list_comments(
 				array(
-					'style'       => 'div',
-					'hierarchical' => 'threaded',
+					'style'       => 'ul',
 					'short_ping'  => true,
 					'avatar_size' => 32,
 					'callback'    => 'birds_comment',
 				)
 			);
 			?>
+				</ul>
 			</div>
 
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>

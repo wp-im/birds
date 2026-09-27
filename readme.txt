@@ -3,7 +3,7 @@ Contributors: wp-im
 Requires at least: 6.1
 Requires PHP: 7.4
 Tested up to: 7.1
-Stable tag: 0.5.2
+Stable tag: 0.5.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,10 +25,13 @@ Birds is distributed under the GNU General Public License v2 or later.
 
 == Changelog ==
 
+= 0.5.3 =
+
+* Restored semantic nested comment markup with a native comment-list wrapper and WordPress ul-style threaded output.
+
 = 0.5.2 =
 
 * Explicitly enabled WordPress threaded comment output so child replies render inside .children.
-
 = 0.5.1 =
 
 * Fixed the native comment form template so threaded replies render and submit correctly.
